@@ -1,0 +1,328 @@
+/* CSS Variables */
+:root {
+    /* Typography */
+    --font-family: 'Rubik', sans-serif;
+    --font-size-base: 16px;
+
+    /* Primary Colors */
+    --clr-purple-300: hsl(276, 100%, 81%);
+    --clr-purple-600: hsl(276, 55%, 52%);
+    --clr-gray-500: hsl(270, 7%, 64%);
+    --clr-gray-300: hsl(206, 6%, 79%);
+    --clr-purple-950: hsl(271, 36%, 24%);
+
+    /* Gradient Colors */
+    --clr-pink-500: hsl(293, 100%, 63%);
+    --clr-purple-500: hsl(264, 100%, 61%);
+    --clr-gradient-main: linear-gradient(to left, var(--clr-pink-500), var(--clr-purple-500));
+
+    /* Secondary Colors */
+    --clr-white: hsl(0, 100%, 100%);
+    --clr-gray-100: hsl(270, 20%, 96%);
+    --clr-purple-950-bg: hsl(271, 36%, 24%);
+    --clr-pink-400: hsl(289, 100%, 72%);
+
+    /* Layout */
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--clr-gray-100);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.shape {
+    background-image: var(--clr-gradient-main);
+    width: 400px;
+    height: 600px;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    left: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.container {
+    width: var(--mobile-width);
+    height: 100%;
+    max-width: var(--desktop-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 3rem;
+}
+
+.phone {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    position: relative;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    filter: drop-shadow(5px 10px 4px rgba(0, 0, 0, 0.02));
+}
+
+.notch {
+    background-color: white;
+    width: 60%;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: -7px;
+    transform: translateX(-50%);
+    border-radius: 0 0 20px 20px;
+}
+
+.header {
+    background-image: var(--clr-gradient-main);
+    width: 100%;
+    height: 80px;
+    border-radius: 20px 20px 10px 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.left-group {
+    display: flex;
+    align-items: center;
+}
+
+
+.back-btn {
+    font-size: 1.5rem;
+    color: var(--clr-white);
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid white;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile h2 {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.profile p {
+    font-size: .7rem;
+    font-weight: 400;
+    color: var(--clr-gray-300);
+}
+
+.menu-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.chat {
+    background-color: var(--clr-gray-100);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 2rem .5rem 0;
+    flex: 1;
+    overflow-y: auto;
+    border-radius: 20px;
+    margin-top: -2.5rem;
+
+}
+
+.message {
+    max-width: 71%;
+    padding: .5rem .75rem;
+    font-size: .65rem;
+    line-height: 1.4;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.03)
+}
+
+.message.received {
+    background-color: #EDE5F4;
+    color: var(--clr-purple-600);
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: white;
+}
+
+.message-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.message img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.option {
+    background-image: var(--clr-gradient-main);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.radio {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.time p {
+    font-size: .5rem;
+    color: var(--clr-white);
+}
+
+.message-input {
+    background-color: white;
+    border-radius: 999px;
+    padding: .35rem .35rem .35rem 1rem;
+    margin: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+.message-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: .7rem;
+    color: var(--clr-gray-500);
+}
+
+.message-input input::placeholder {
+    color: var(--clr-gray-300);
+}
+
+.message-input button {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--clr-purple-950);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 0 1px 1px;
+}
+
+.content{
+    text-align: center;
+    max-width: 500px;
+}
+
+.content h1{
+    color: var(--clr-purple-950);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.content p{
+    color: var(--clr-gray-500);
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem 4rem;
+  }
+
+  .phone {
+    width: 320px;
+    flex-shrink: 0;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .chat {
+    height: 500px;
+    padding: 2rem 1rem 0;
+    margin-top: -2.5rem;
+  }
+
+  .shape {
+    width: 500px;
+    height: 700px;
+    border-radius: 0 0 70% 70%;
+    left: -20%;
+    top: -50px;
+  }
+
+  .content {
+    max-width: 480px;
+    text-align: left;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  .content p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
