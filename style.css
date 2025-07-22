@@ -369,6 +369,7 @@
         .content-section {
             text-align: left;
             margin-bottom: 0;
+            max-width: 500px;
         }
 
         .content-section h1 {
